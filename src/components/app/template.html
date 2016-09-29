@@ -1,5 +1,5 @@
 <main class='app'>
   <ul class='spell-list'>
-    <li class='spell-item' *ngFor='let spell of spells'>{{spell.name}}</li>
+    <spell-card *ngFor='let spell of spells' [spell]='spell'></spell-card>
   </ul>
 </main>

@@ -10,6 +10,16 @@ body {
   margin: 0;
 }
 
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  margin: 0;
+}
+
 .app {
   background: url('./dark-geometric.png') repeat;
   height: 100%;
