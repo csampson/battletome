@@ -1,6 +1,5 @@
 'use strict';
 
-const CommonsChunkPlugin   = require('webpack/lib/optimize/CommonsChunkPlugin');
 const DedupePlugin         = require('webpack/lib/optimize/DedupePlugin');
 const HtmlWebpackPlugin    = require('html-webpack-plugin');
 const OccurenceOrderPlugin = require('webpack/lib/optimize/OccurenceOrderPlugin');
@@ -13,8 +12,7 @@ module.exports = {
   },
   devtool: 'cheap-module-eval-source-map',
   entry: {
-    app: './src/app.js',
-    polyfills: './src/polyfills.js',
+    main: './src/main.js',
     vendor: './src/vendor.js'
   },
   module: {
@@ -46,11 +44,7 @@ module.exports = {
     new DedupePlugin(),
     new OccurenceOrderPlugin(),
     new HtmlWebpackPlugin({
-      template: './src/index.html',
-      inject: false
-    }),
-    new CommonsChunkPlugin({
-      name: ['app', 'vendor', 'polyfills']
-    }),
+      template: './src/index.html'
+    })
   ]
 };
