@@ -18,6 +18,6 @@ import template from './template.html';
   styles: [styles],
   template
 })
-class App {}
+class AppComponent {}
 
-export default App;
+export default AppComponent;

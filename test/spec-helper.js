@@ -7,12 +7,7 @@ const jsdom     = require('mocha-jsdom');
 const sinon     = require('sinon');
 const sinonChai = require('sinon-chai');
 
-require('reflect-metadata');
-require('rxjs/Observable');
-require('rxjs/add/observable/throw');
-require('rxjs/add/operator/catch');
-require('rxjs/add/operator/debounceTime');
-require('rxjs/add/operator/map');
+require('../src/vendor');
 
 global.sandbox = sinon.sandbox.create();
 global.sinon   = sinon;

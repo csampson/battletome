@@ -1,5 +1,5 @@
 import 'reflect-metadata';
-import 'zone.js/dist/zone';
+import 'zone.js';
 import 'zone.js/dist/long-stack-trace-zone';
 
 Error.stackTraceLimit = Infinity;
