@@ -10,10 +10,9 @@ module.exports = {
     historyApiFallback: true,
     stats: 'minimal'
   },
-  devtool: 'cheap-module-eval-source-map',
+  devtool: 'source-map',
   entry: {
-    main: './src/main.js',
-    vendor: './src/vendor.js'
+    main: './src/main.js'
   },
   module: {
     loaders: [

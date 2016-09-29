@@ -1,23 +1,31 @@
-/**
- * @overview Main application container
- * @module   app
- * @requires @angular/core/Component
- * @requires @angular/core/ViewEncapsulation
- * @requires styles.css
- * @requires template.html
- */
-
 import { Component, ViewEncapsulation } from '@angular/core';
 
-import styles   from './styles.css';
-import template from './template.html';
+import { SpellsService } from '../../services';
+import styles            from './styles.css';
+import template          from './template.html';
 
 @Component({
   encapsulation: ViewEncapsulation.None,
+  providers: [SpellsService],
   selector: 'app',
   styles: [styles],
   template
 })
-class AppComponent {}
+class AppComponent {
+  static get parameters() {
+    return [[SpellsService]];
+  }
+
+  constructor(spellsService) {
+    this.SpellsService = spellsService;
+  }
+
+  ngOnInit() {
+    this.SpellsService.list()
+      .subscribe(spells => {
+        this.spells = spells;
+      });
+  }
+}
 
 export default AppComponent;
