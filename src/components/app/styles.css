@@ -1,11 +1,16 @@
-:root * {
+html {
   box-sizing: border-box;
 }
 
-:root, :root body {
+html, body {
   height: 100%;
 }
 
-:root body {
+body {
   margin: 0;
+}
+
+.app {
+  background: url('./dark-geometric.png') repeat;
+  height: 100%;
 }
