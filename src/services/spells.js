@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Http }       from '@angular/http';
+import { Observable } from 'rxjs/Observable';
 
 const SPELLS_URL = 'https://api.myjson.com/bins/3gxbk';
 
@@ -25,6 +26,9 @@ export default class SpellService {
   list() {
     return this.http
       .get(SPELLS_URL)
-      .map(deserialize);
+      .map(deserialize)
+      .catch(error => (
+        Observable.throw(error.json().error ||'Error fetching spells')
+      ));
   }
 }
