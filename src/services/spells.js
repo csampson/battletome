@@ -5,7 +5,6 @@ import { Observable } from 'rxjs/Observable';
 const SPELLS_URL = 'https://api.myjson.com/bins/3gxbk';
 
 function deserialize(response) {
-  console.log(response);
   const spells = response.json();
 
   return Object.keys(spells).map(name => ({
